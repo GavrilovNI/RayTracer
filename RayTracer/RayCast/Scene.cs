@@ -143,11 +143,21 @@ namespace RayTracer.RayCast
                     {
                         hits.Add(hitInfo);
                         color = hitInfo.Object3D.material.Color;
+
                         if (lights.Count > 0)
                         {
-                            double light = lights[0].GetLight(hitInfo.Point+hitInfo.Normal * addNormal, hitInfo.Normal, this);
-                            color = ColorFromHSV(color.GetHue(), color.GetSaturation(), light);
+                            double maxLight = lights[0].GetLight(hitInfo.Point + hitInfo.Normal * addNormal, hitInfo.Normal, this);
+                            int maxLightId = 0;
+                            for (int l = 1; l < lights.Count; l++)
+                            {
+                                double light = lights[l].GetLight(hitInfo.Point + hitInfo.Normal * addNormal, hitInfo.Normal, this);
+                                if (light > maxLight)//its wrong, just for test
+                                    maxLight = light;
+                            }
+                            color = ColorFromHSV(color.GetHue(), color.GetSaturation(), maxLight);
                         }
+                        
+                        
                         
                     }
                     else

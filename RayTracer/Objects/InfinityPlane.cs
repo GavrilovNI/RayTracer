@@ -30,6 +30,11 @@ namespace RayTracer.Objects
 
         public override bool RayCast(Ray ray, double maxDistance, out HitInfo hitInfo)
         {
+            if(MathUtils.Equal(ray.Origin.y, position.y))
+            {
+                hitInfo = new HitInfo(ray, 0, -ray.Direction, this);
+            }
+
             Vector3 normal = Vector3.Up;
             double denom = Vector3.Dot(normal, ray.Direction);
             if (Math.Abs(denom) > 0.0001f)

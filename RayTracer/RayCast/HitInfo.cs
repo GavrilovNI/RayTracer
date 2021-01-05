@@ -47,8 +47,8 @@ namespace RayTracer.RayCast
             this._point = ray.Position(distance);
             this._distance = distance;
             this._normal = normal.Normalized;
-            if (Vector3.Dot(normal, ray.Direction) > 0)
-                normal = -normal;
+            if (Vector3.Dot(_normal, ray.Direction) > 0)
+                _normal = -_normal;
             this._object3D = object3D;
         }
 

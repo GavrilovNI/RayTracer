@@ -17,7 +17,7 @@ namespace RayTracer.RayCast.Lightning
 
         public override double GetLight(Vector3 point, Vector3 normal, Scene scene)
         {
-            if(scene.RayCast(new Ray(point, this.position - point), Vector3.Distance(point, position), out HitInfo hitInfo))
+            if(scene.RayCast(new Ray(point, this.position - point), Vector3.Distance(point, position)+MathUtils.Epsilon, out HitInfo hitInfo))
             {
                 return 0;
             }

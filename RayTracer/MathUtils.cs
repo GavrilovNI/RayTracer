@@ -6,7 +6,7 @@ namespace RayTracer
 {
     public static class MathUtils
     {
-        public const double Epsilon = 1.401298e-45;
+        public const double Epsilon = 1e-15;
         public const double Deg2Rad = (System.Math.PI * 2) / 360;
         public const double Rad2Deg = 360 / (System.Math.PI * 2);
 

@@ -46,6 +46,7 @@ namespace RayTracer
             scene.AddObject(new InfinityPlane(new Vector3(0,-1,0), blue));
 
             scene.AddLight(new PointLight(5, new Vector3(2, 1, 0)));
+            scene.AddLight(new PointLight(5, new Vector3(-2, 1, 0)));
 
             Camera camera = new Camera(new Ray(new Vector3(0, 0, 0), Vector3.Forward), 60, Vector3.Up);
 
