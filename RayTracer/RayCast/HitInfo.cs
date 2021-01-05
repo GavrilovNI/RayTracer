@@ -8,21 +8,48 @@ namespace RayTracer.RayCast
 {
     public struct HitInfo : IFormattable
     {
-        private Vector3 _hitNormal;
+        private Vector3 _point;
+        private double _distance;
+        private Vector3 _normal;
+        private Object3D _object3D;
 
-        public Vector3 HitPoint;
-        public Vector3 HitNormal {
-            get { return _hitNormal; }
+
+        public Vector3 Point { get { return _point; } set { _point = value; } }
+
+        public double Distance { get { return _distance; } set { _distance = value; } }
+        public Vector3 Normal {
+            get { return _normal; }
             set
             {
-                _hitNormal = value.Normalized;
+                _normal = value.Normalized;
             }
         }
 
-        public HitInfo(Vector3 hitPoint, Vector3 hitNormal)
+        public Object3D Object3D
         {
-            this.HitPoint = hitPoint;
-            this._hitNormal = hitNormal.Normalized;
+            get { return _object3D; }
+            set
+            {
+                _object3D = value;
+            }
+        }
+
+        public HitInfo(Vector3 point, double distance, Vector3 normal, Object3D object3D)
+        {
+            this._point = point;
+            this._distance = distance;
+            this._normal = normal.Normalized;
+            this._object3D = object3D;
+        }
+
+        public HitInfo(Ray ray, double distance, Vector3 normal, Object3D object3D)
+        {
+            this._point = ray.Position(distance);
+            this._distance = distance;
+            this._normal = normal.Normalized;
+            if (Vector3.Dot(normal, ray.Direction) > 0)
+                normal = -normal;
+            this._object3D = object3D;
         }
 
 
@@ -31,8 +58,9 @@ namespace RayTracer.RayCast
             return String.Join(String.Empty, new String[] {
                 "HitInfo(",
                 String.Join(", ", new String[] {
-                            HitPoint.ToString(format, formatProvider),
-                            HitNormal.ToString(format, formatProvider)
+                            Point.ToString(format, formatProvider),
+                            Distance.ToString(format, formatProvider),
+                            Normal.ToString(format, formatProvider)
                             }),
                 ")" });
         }

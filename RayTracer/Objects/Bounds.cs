@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using RayTracer.RayCast;
 using RayTracer.Structs;
 
 namespace RayTracer.Objects
@@ -18,6 +18,23 @@ namespace RayTracer.Objects
             this.min = min;
             this.max = max;
         }
+
+        public PointLocation GetPointLocation(Vector3 point)
+        {
+            if (point.x < min.x || point.y < min.y || point.z < min.z)
+                return PointLocation.OutSide;
+            if (point.x > max.x || point.y > max.y || point.z > max.z)
+                return PointLocation.OutSide;
+
+            if (point.x == min.x || point.y == min.y || point.z == min.z)
+                return PointLocation.On;
+            if (point.x == max.x || point.y == max.y || point.z == max.z)
+                return PointLocation.On;
+
+            return PointLocation.Inside;
+        }
+
+        
 
         public static Bounds operator+ (Bounds a, Bounds b)
         {

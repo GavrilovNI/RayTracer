@@ -1,5 +1,6 @@
 ﻿using RayTracer.Objects;
 using RayTracer.RayCast;
+using RayTracer.RayCast.Lightning;
 using RayTracer.Structs;
 using System;
 using System.Collections.Generic;
@@ -29,30 +30,30 @@ namespace RayTracer
         {
             InitializeComponent();
 
-            Camera camera = new Camera(new Ray(Vector3.Zero, Vector3.Forward), 60, Vector3.Up);
-            Sphere sphere = new Sphere(Vector3.Forward*3, 1);
 
-            int width = 160;
-            int height = 90;
+            Vector3 a = new Vector3(0, 0, 1);
+            Vector3 b = new Vector3(0, 1, -0.1);
 
-            Ray[,] rays = camera.GetRays(width, height);
+            double x = Vector3.Dot(a, b);
 
-            Bitmap bmp = new Bitmap(width, height);
+            Scene scene = new Scene();
 
-            for (int y = 0; y < rays.GetLength(0); y++)
-            {
-                for (int x = 0; x < rays.GetLength(1); x++)
-                {
-                    if(sphere.RayCastAll(rays[y, x], 100).Count>0)
-                    {
-                        bmp.SetPixel(x, y, System.Drawing.Color.Red);
-                    }
-                    else
-                    {
-                        bmp.SetPixel(x, y, System.Drawing.Color.White);
-                    }
-                }
-            }
+            Material red = new Material(System.Drawing.Color.Red);
+            Material green = new Material(System.Drawing.Color.Green);
+            Material blue = new Material(System.Drawing.Color.Blue);
+            scene.AddObject(new Sphere(new Vector3(0, 0, 3), red, 1));
+            scene.AddObject(new Sphere(new Vector3(1.5, 1, 4), green, 0.7));
+            scene.AddObject(new InfinityPlane(new Vector3(0,-1,0), blue));
+
+            scene.AddLight(new PointLight(5, new Vector3(2, 1, 0)));
+
+            Camera camera = new Camera(new Ray(new Vector3(0, 0, 0), Vector3.Forward), 60, Vector3.Up);
+
+            int width = 1600;
+            int height = 900;
+
+
+            Bitmap bmp = scene.Draw(camera, width, height, 100);
 
             image.Source = Imaging.Utils.Bitmap2Source(bmp);
         }

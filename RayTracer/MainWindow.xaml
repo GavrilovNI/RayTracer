@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RayTracer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        RenderOptions.BitmapScalingMode="NearestNeighbor"
+        UseLayoutRounding="True"
+        Title="MainWindow" Height="900" Width="1600">
     <Grid Background="#FFE0E0E0">
-        <Image  x:Name="image"  HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="25,25,0,0"  Width="757" Height="391" Stretch="Uniform" StretchDirection="Both"/>
+        <Image  x:Name="image"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Margin="5,5,5,5"  Stretch="Uniform" StretchDirection="Both"/>
     </Grid>
 </Window>
