@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Nikita\Documents\RayTracer\obj\Debug\netcoreapp3.1\
+C:\Users\Nikita\Documents\RayTracer\RayTracer\obj\Debug\netcoreapp3.1\
 RayTracer
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\Nikita\Documents\RayTracer\App.xaml
+C:\Users\Nikita\Documents\RayTracer\RayTracer\App.xaml
 11151548125
 
-151398450385
-1921654412462
+16-1175341091
+1941025675119
 MainWindow.xaml;
 
-False
+True
 

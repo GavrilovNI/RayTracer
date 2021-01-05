@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nikita\\Documents\\RayTracer\\RayTracer.csproj": {}
+    "C:\\Users\\Nikita\\Documents\\RayTracer\\RayTracer\\RayTracer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nikita\\Documents\\RayTracer\\RayTracer.csproj": {
+    "C:\\Users\\Nikita\\Documents\\RayTracer\\RayTracer\\RayTracer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nikita\\Documents\\RayTracer\\RayTracer.csproj",
+        "projectUniqueName": "C:\\Users\\Nikita\\Documents\\RayTracer\\RayTracer\\RayTracer.csproj",
         "projectName": "RayTracer",
-        "projectPath": "C:\\Users\\Nikita\\Documents\\RayTracer\\RayTracer.csproj",
+        "projectPath": "C:\\Users\\Nikita\\Documents\\RayTracer\\RayTracer\\RayTracer.csproj",
         "packagesPath": "C:\\Users\\Nikita\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nikita\\Documents\\RayTracer\\obj\\",
+        "outputPath": "C:\\Users\\Nikita\\Documents\\RayTracer\\RayTracer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nikita\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,16 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Imaging.Common": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

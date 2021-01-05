@@ -20,9 +20,9 @@ namespace RayTracer.RayCast
             this.up = up;
         }
 
-        public List<Ray> GetRays(int width, int height)
+        public Ray[,] GetRays(int width, int height)
         {
-            List<Ray> result = new List<Ray>();
+            Ray[,] result = new Ray[height, width];
 
             double ratio = 1.0f * width / height;
             double tan = Math.Tan(FOV / 2 * MathUtils.Deg2Rad); 
@@ -41,7 +41,7 @@ namespace RayTracer.RayCast
                 Vector3 currDir = dirTopLeft;
                 for (int x = 0; x < width; x++)
                 {
-                    result.Add(new Ray(ray.Origin, currDir));
+                    result[y, x] = new Ray(ray.Origin, currDir);
                     currDir += oneRight;
                 }
                 dirTopLeft += oneDown;

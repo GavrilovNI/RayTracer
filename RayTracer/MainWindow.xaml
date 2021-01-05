@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RayTracer"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+    <Grid Background="#FFE0E0E0">
+        <Image  x:Name="image"  HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="25,25,0,0"  Width="757" Height="391" Stretch="Uniform" StretchDirection="Both"/>
     </Grid>
 </Window>

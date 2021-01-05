@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Ey6kFFC5xdg0qKw+2P7pYYFTjn04AMTB4Ynh48kbx9Ae1hPEa9df1pBhHbpiBkxy6lFFU738G1IXhBsca52N9g==",
+  "dgSpecHash": "J1VrobZRNE1I+IS/jvRWL4lfgQk0LaGU0I7bzd5b0/L9QZnjFrSnTAnZlfG8Jao3wgL39tV3eLt4HS0lxcC+2w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nikita\\Documents\\RayTracer\\RayTracer.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Nikita\\Documents\\RayTracer\\RayTracer\\RayTracer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Nikita\\.nuget\\packages\\imaging.common\\1.0.1\\imaging.common.1.0.1.nupkg.sha512",
+    "C:\\Users\\Nikita\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Nikita\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\Nikita\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
